@@ -3,5 +3,11 @@ const INITIAL_STATE = {
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
+
+  if(action.type === 'fetchAll'){
+    return Object.assign({}, state, {
+      allPages: action.payload
+    });
+  }
   return state;
 }

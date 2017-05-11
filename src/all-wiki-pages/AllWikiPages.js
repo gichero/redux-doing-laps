@@ -9,16 +9,22 @@ import React from 'react';
 import * as ReactRedux from 'react-redux';
 import * as actions from './AllWikiPages.actions';
 
+
 class AllWikiPages extends React.Component {
   componentDidMount() {
-    // Add code here
+    this.props.fetchPage();
   }
+
   render() {
     return (
       <div>
         <h1>All Wiki Pages</h1>
         <ul>
-          { /* map over all pages here */ }
+          {this.props.allPages.map((page,idx)=>
+            <div key={idx}>
+            <h2>{page.title}</h2>
+            <p>{page.content}</p>
+          </div>)}
         </ul>
       </div>
     );
