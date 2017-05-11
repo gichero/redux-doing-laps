@@ -5,5 +5,22 @@ const INITIAL_STATE = {
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
-  return state;
+  if(action.type === 'name'){
+    return Object.assign({}, state, {
+      name: action.text
+    });
+  }
+  else if(action.type === 'email'){
+    return Object.assign({}, state, {
+      email: action.text
+    });
+  }
+  else if(action.type === 'phone'){
+    return Object.assign({}, state, {
+      phone: action.text
+    });
+  }
+  else
+  
+   return state;
 }

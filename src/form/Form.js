@@ -27,17 +27,17 @@ class Form extends React.Component {
           <h1>This is a form</h1>
           <div>
             <label>Name</label><br/>
-            <input type="text"/>
+            <input name='name' onChange={(event)=>this.props.nameInput(event.target.value)} type="text"/>
           </div>
           <div>
             <label>Email</label><br/>
-            <input type="text"/>
+            <input name='email' onChange={(event)=>this.props.emailInput(event.target.value)} type="text"/>
           </div>
           <div>
             <label>Phone</label><br/>
-            <input type="text"/>
+            <input name='phone' onChange={(event)=>this.props.phoneInput(event.target.value)} type="text"/>
           </div>
-          <button>Submit</button>
+          <button onClick={()=>this.props.submitForm(this.props.name, this.props.phone, this.props.email)}>Submit</button>
         </div>
         <div>
           <h2>Current Values</h2>
